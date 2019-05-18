@@ -7,6 +7,7 @@ public class MainTest {
     @ParameterizedTest
     @CsvSource({
             "1, 1",
+            "2, 2",
     })
     void should_test_fizz_buzz(int input, String output) {
         FizzBuzz item = new FizzBuzz(input);
