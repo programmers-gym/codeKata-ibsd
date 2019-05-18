@@ -9,6 +9,7 @@ public class MainTest {
             "1, 1",
             "2, 2",
             "3, Fizz",
+            "5, Buzz",
     })
     void should_test_fizz_buzz(int input, String output) {
         FizzBuzz item = new FizzBuzz(input);
