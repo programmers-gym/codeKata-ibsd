@@ -8,6 +8,7 @@ public class MainTest {
     @CsvSource({
             "1, 1",
             "2, 2",
+            "3, Fizz",
     })
     void should_test_fizz_buzz(int input, String output) {
         FizzBuzz item = new FizzBuzz(input);
