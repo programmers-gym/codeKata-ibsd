@@ -59,6 +59,12 @@ public class WordAnagramsGroup {
     public void reportAll() {
         this.groups.values()
                 .stream()
-                ;
+                .filter(wordCPAS -> wordCPAS.size() > 1)
+                .map(wordCPAS -> wordCPAS.stream()
+                        .map(WordCPA::toString)
+                        .sorted()
+                        .reduce((s, s2) -> s + " " + s2)
+                        .orElse("")
+        );
     }
 }
