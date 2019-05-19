@@ -3,10 +3,14 @@ public class FizzBuzz {
 
     @Override
     public String toString() {
-        if (this.value % 15 == 0) return "FizzBuzz";
-        if (this.value % 3 == 0) return "Fizz";
-        if (this.value % 5 == 0) return "Buzz";
+        if (isDividedBy(15)) return "FizzBuzz";
+        if (isDividedBy(3)) return "Fizz";
+        if (isDividedBy(5)) return "Buzz";
         return String.valueOf(this.value);
+    }
+
+    private boolean isDividedBy(int i) {
+        return this.value % i == 0;
     }
 
     public FizzBuzz(int i) {
