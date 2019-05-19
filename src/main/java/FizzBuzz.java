@@ -15,7 +15,7 @@ public class FizzBuzz {
         if (ruleSet != null)
             ruleSet.stream()
                     .map(ruleEntry -> ruleEntry.apply(this.value))
-                    .collect(Collectors.toList())
+                    .collect(Collectors.toList());
         return new String[]{fizzRuleResult(), buzzRuleResult()};
     }
 
