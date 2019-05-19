@@ -7,6 +7,6 @@ public class MainTest {
     void name() {
         WordCPA word1 = new WordCPA("ab");
         WordCPA word2 = new WordCPA("ba");
-        assertEquals(1,1);
+        assertEquals(word1.hashCode(), word2.hashCode());
     }
 }
