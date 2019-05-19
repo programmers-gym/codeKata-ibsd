@@ -16,5 +16,7 @@ public class MainTest {
         WordCPA word2 = new WordCPA("bac");
         WordCPA word3 = new WordCPA("cba");
         assertEquals(word1.hashCode(), word2.hashCode());
+        assertEquals(word3.hashCode(), word2.hashCode());
+        assertEquals(word1.hashCode(), word3.hashCode());
     }
 }
