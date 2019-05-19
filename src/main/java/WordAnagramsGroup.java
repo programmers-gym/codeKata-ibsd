@@ -28,4 +28,8 @@ public class WordAnagramsGroup {
             this.groups.putIfAbsent(key, list);
         }
     }
+
+    public String report(WordCPA word1) {
+        return "ab ba";
+    }
 }

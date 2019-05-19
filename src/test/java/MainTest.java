@@ -34,4 +34,16 @@ public class MainTest {
         group.add(word4);
         assertEquals(4, group.count(word1));
     }
+
+    @Test
+    void test_group_report() {
+        WordCPA word1 = new WordCPA("ab");
+        WordCPA word2 = new WordCPA("ba");
+
+        WordAnagramsGroup group = new WordAnagramsGroup();
+        group.add(word1);
+        group.add(word2);
+
+        assertEquals("ab ba", group.report(word1));
+    }
 }
