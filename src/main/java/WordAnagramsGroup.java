@@ -49,6 +49,10 @@ public class WordAnagramsGroup {
     }
 
     public int max() {
-        return 4;
+        return this.groups.values()
+                .stream()
+                .map(List::size)
+                .max(Integer::compareTo)
+                .orElse(0);
     }
 }
