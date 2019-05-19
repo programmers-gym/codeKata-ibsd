@@ -10,6 +10,7 @@ public class MainTest {
             "2, 2",
             "3, Fizz",
             "5, Buzz",
+            "15, FizzBuzz",
     })
     void should_test_fizz_buzz(int input, String output) {
         FizzBuzz item = new FizzBuzz(input);
