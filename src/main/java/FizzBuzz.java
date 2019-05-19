@@ -5,15 +5,11 @@ public class FizzBuzz {
 
     @Override
     public String toString() {
-        String[] atomicResults = getAtomicResults();
-
-        return componentRuleResult(atomicResults);
+        return componentRuleResult(getAtomicResults());
     }
 
     private String[] getAtomicResults() {
-        String result1 = fizzRuleResult();
-        String result2 = buzzRuleResult();
-        return new String[]{result1, result2};
+        return new String[]{fizzRuleResult(), buzzRuleResult()};
     }
 
     private String componentRuleResult(String[] atomicResults) {
@@ -24,13 +20,11 @@ public class FizzBuzz {
     }
 
     private String fizzRuleResult() {
-        if (isDividedBy(3)) return "Fizz";
-        return "";
+        return (isDividedBy(3)) ? "Fizz" : "";
     }
 
     private String buzzRuleResult() {
-        if (isDividedBy(5)) return "Buzz";
-        return "";
+        return (isDividedBy(5)) ? "Buzz" : "";
     }
 
     private boolean isDividedBy(int i) {
