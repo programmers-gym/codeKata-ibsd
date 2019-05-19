@@ -5,5 +5,7 @@ public class Main {
         WordAnagramsGroup group = new WordAnagramsGroup();
 
         group.loadFromFile("wordlist.txt");
+
+        System.out.println(group.max());
     }
 }
