@@ -65,6 +65,7 @@ public class WordAnagramsGroup {
                         .sorted()
                         .reduce((s, s2) -> s + " " + s2)
                         .orElse("")
-        );
+                )
+                .forEach(System.out::println);
     }
 }
