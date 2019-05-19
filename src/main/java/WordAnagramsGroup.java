@@ -10,15 +10,16 @@ public class WordAnagramsGroup {
         this.groups = new HashMap<>();
     }
 
-    public int count() {
+    public int count(WordCPA word) {
+        List<WordCPA> list = this.groups.get(word.hashCode());
 
-        return 3;
+        return list != null ? list.size() : 0;
     }
 
     public void add(WordCPA word) {
         int key = word.hashCode();
         if (this.groups.containsKey(key)) {
-            List<WordCPA> list =  this.groups.get(key);
+            List<WordCPA> list = this.groups.get(key);
             list.add(word);
             this.groups.put(key, list);
         } else {

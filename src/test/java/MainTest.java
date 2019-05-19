@@ -30,6 +30,6 @@ public class MainTest {
         group.add(word1);
         group.add(word2);
         group.add(word3);
-        assertEquals(3, group.count());
+        assertEquals(3, group.count(word1));
     }
 }
