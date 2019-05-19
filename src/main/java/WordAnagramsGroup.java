@@ -29,7 +29,12 @@ public class WordAnagramsGroup {
         }
     }
 
-    public String report(WordCPA word1) {
+    public String report(WordCPA word) {
+        this.groups.get(word.hashCode())
+                .stream()
+                .map(wordCPA -> wordCPA.toString())
+                .reduce((s, s2) -> s + " " + s2)
+                .orElse("");
         return "ab ba";
     }
 }
