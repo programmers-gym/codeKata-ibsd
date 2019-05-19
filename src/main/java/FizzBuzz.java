@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,17 +9,15 @@ public class FizzBuzz {
         return componentRuleResult(getAtomicResults());
     }
 
-    private String[] getAtomicResults() {
+    private List<String> getAtomicResults() {
         List<RuleEntry> ruleSet = RuleSet.all();
-        if (ruleSet != null)
-            ruleSet.stream()
-                    .map(ruleEntry -> ruleEntry.apply(this.value))
-                    .collect(Collectors.toList());
-        return new String[]{fizzRuleResult(), buzzRuleResult()};
+        return ruleSet.stream()
+                .map(ruleEntry -> ruleEntry.apply(this.value))
+                .collect(Collectors.toList());
     }
 
-    private String componentRuleResult(String[] atomicResults) {
-        return Arrays.stream(atomicResults)
+    private String componentRuleResult(List<String> atomicResults) {
+        return atomicResults.stream()
                 .filter(s -> !s.isEmpty())
                 .reduce(String::concat)
                 .orElse(String.valueOf(this.value));
