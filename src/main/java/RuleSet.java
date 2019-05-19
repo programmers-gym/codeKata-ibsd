@@ -5,7 +5,8 @@ public class RuleSet {
     public static List<RuleEntry> all() {
         return Arrays.asList(
                 DivideRule.create(3, "Fizz"),
-                DivideRule.create(5, "Buzz")
+                DivideRule.create(5, "Buzz"),
+                ContainsRule.create(3, "Fizz")
         );
     }
 }

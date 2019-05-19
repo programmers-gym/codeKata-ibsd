@@ -19,6 +19,7 @@ public class FizzBuzz {
     private String componentRuleResult(List<String> atomicResults) {
         return atomicResults.stream()
                 .filter(s -> !s.isEmpty())
+                .distinct()
                 .reduce(String::concat)
                 .orElse(String.valueOf(this.value));
     }
