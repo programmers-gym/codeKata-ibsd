@@ -9,8 +9,7 @@ public class WordCPA {
 
         char[] array = this.value.toCharArray();
         Arrays.sort(array);
-
-        return 0;
+        return Arrays.hashCode(array);
     }
 
     public WordCPA(String word) {
