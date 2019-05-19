@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class FizzBuzz {
     private final int value;
@@ -9,6 +10,7 @@ public class FizzBuzz {
     }
 
     private String[] getAtomicResults() {
+        List<RuleEntry> ruleset = RuleSet.all();
         return new String[]{fizzRuleResult(), buzzRuleResult()};
     }
 
