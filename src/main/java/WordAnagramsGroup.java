@@ -55,4 +55,10 @@ public class WordAnagramsGroup {
                 .max(Integer::compareTo)
                 .orElse(0);
     }
+
+    public void reportAll() {
+        this.groups.values()
+                .stream()
+                ;
+    }
 }
