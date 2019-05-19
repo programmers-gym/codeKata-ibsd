@@ -13,6 +13,7 @@ public class DivideRule implements RuleEntry {
 
     @Override
     public String apply(int value) {
+        if (value % this.input == 0) return this.output;
         return "";
     }
 }
