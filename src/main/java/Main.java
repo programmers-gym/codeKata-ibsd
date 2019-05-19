@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.function.Consumer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -11,5 +12,13 @@ public class Main {
 
         System.out.println(group.max());
         group.reportAll(System.out::println);
+        group.reportAll(s -> {
+            try {
+                bufferedWriter.write(s);
+                bufferedWriter.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
