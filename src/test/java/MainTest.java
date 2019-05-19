@@ -4,9 +4,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainTest {
     @Test
-    void name() {
+    void test_ab_ba() {
         WordCPA word1 = new WordCPA("ab");
         WordCPA word2 = new WordCPA("ba");
+        assertEquals(word1.hashCode(), word2.hashCode());
+    }
+
+    @Test
+    void test_abc_bac_cab() {
+        WordCPA word1 = new WordCPA("abc");
+        WordCPA word2 = new WordCPA("bac");
+        WordCPA word3 = new WordCPA("cba");
         assertEquals(word1.hashCode(), word2.hashCode());
     }
 }

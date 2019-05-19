@@ -5,8 +5,6 @@ public class WordCPA {
 
     @Override
     public int hashCode() {
-        int result = 0;
-
         char[] array = this.value.toCharArray();
         Arrays.sort(array);
         return Arrays.hashCode(array);
