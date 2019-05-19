@@ -11,6 +11,8 @@ public class MainTest {
             "3, Fizz",
             "5, Buzz",
             "15, FizzBuzz",
+            "13, Fizz",
+            "52, Buzz",
     })
     void should_test_fizz_buzz(int input, String output) {
         FizzBuzz item = new FizzBuzz(input);
