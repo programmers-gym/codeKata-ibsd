@@ -37,13 +37,15 @@ public class MainTest {
 
     @Test
     void test_group_report() {
-        WordCPA word1 = new WordCPA("ab");
-        WordCPA word2 = new WordCPA("ba");
+        WordCPA word1 = new WordCPA("abc");
+        WordCPA word2 = new WordCPA("acb");
+        WordCPA word3 = new WordCPA("bac");
 
         WordAnagramsGroup group = new WordAnagramsGroup();
         group.add(word1);
         group.add(word2);
+        group.add(word3);
 
-        assertEquals("ab ba", group.report(word1));
+        assertEquals("abc acb bac", group.report(word1));
     }
 }

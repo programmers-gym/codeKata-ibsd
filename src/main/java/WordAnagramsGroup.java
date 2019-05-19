@@ -33,6 +33,7 @@ public class WordAnagramsGroup {
         return this.groups.get(word.hashCode())
                 .stream()
                 .map(WordCPA::toString)
+                .sorted()
                 .reduce((s, s2) -> s + " " + s2)
                 .orElse("");
     }
