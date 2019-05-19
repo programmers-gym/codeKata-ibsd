@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Consumer;
 
 public class WordAnagramsGroup {
     Map<Integer, List<WordCPA>> groups;
@@ -45,12 +46,12 @@ public class WordAnagramsGroup {
                 .orElse(0);
     }
 
-    public void reportAll() {
+    public void reportAll(Consumer<String> outer) {
         this.groups.values()
                 .stream()
                 .filter(wordCPAS -> wordCPAS.size() > 1)
                 .map(wordCPAS -> this.dump(wordCPAS))
-                .forEach(System.out::println);
+                .forEach(outer);
     }
 
     private String dump(List<WordCPA> list) {

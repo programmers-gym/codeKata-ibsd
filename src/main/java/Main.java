@@ -7,6 +7,6 @@ public class Main {
         group.loadFromFile("wordlist.txt");
 
         System.out.println(group.max());
-        group.reportAll();
+        group.reportAll(System.out::println);
     }
 }
