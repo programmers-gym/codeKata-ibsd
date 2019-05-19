@@ -30,11 +30,10 @@ public class WordAnagramsGroup {
     }
 
     public String report(WordCPA word) {
-        this.groups.get(word.hashCode())
+        return this.groups.get(word.hashCode())
                 .stream()
-                .map(wordCPA -> wordCPA.toString())
+                .map(WordCPA::toString)
                 .reduce((s, s2) -> s + " " + s2)
                 .orElse("");
-        return "ab ba";
     }
 }
