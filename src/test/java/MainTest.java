@@ -25,11 +25,13 @@ public class MainTest {
         WordCPA word1 = new WordCPA("abc");
         WordCPA word2 = new WordCPA("bac");
         WordCPA word3 = new WordCPA("cba");
+        WordCPA word4 = new WordCPA("acb");
 
         WordAnagramsGroup group = new WordAnagramsGroup();
         group.add(word1);
         group.add(word2);
         group.add(word3);
-        assertEquals(3, group.count(word1));
+        group.add(word4);
+        assertEquals(4, group.count(word1));
     }
 }
