@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FizzBuzz {
     private final int value;
@@ -10,7 +11,11 @@ public class FizzBuzz {
     }
 
     private String[] getAtomicResults() {
-        List<RuleEntry> ruleset = RuleSet.all();
+        List<RuleEntry> ruleSet = RuleSet.all();
+        if (ruleSet != null)
+            ruleSet.stream()
+                    .map(ruleEntry -> ruleEntry.apply(this.value))
+                    .collect(Collectors.toList())
         return new String[]{fizzRuleResult(), buzzRuleResult()};
     }
 
