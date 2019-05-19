@@ -48,4 +48,25 @@ public class MainTest {
 
         assertEquals("abc acb bac", group.report(word1));
     }
+
+    @Test
+    void test_word_group_max_count() {
+        WordCPA word1 = new WordCPA("abc");
+        WordCPA word2 = new WordCPA("bac");
+        WordCPA word3 = new WordCPA("cba");
+        WordCPA word4 = new WordCPA("acb");
+
+        WordAnagramsGroup group = new WordAnagramsGroup();
+        group.add(word1);
+        group.add(word2);
+        group.add(word3);
+        group.add(word4);
+
+        WordCPA word5 = new WordCPA("ab");
+        WordCPA word6 = new WordCPA("ba");
+        group.add(word5);
+        group.add(word6);
+
+        assertEquals(4, group.max());
+    }
 }

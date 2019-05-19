@@ -47,4 +47,8 @@ public class WordAnagramsGroup {
                     .forEach(this::add);
         }
     }
+
+    public int max() {
+        return 4;
+    }
 }
