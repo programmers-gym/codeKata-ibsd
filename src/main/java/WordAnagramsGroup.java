@@ -30,12 +30,7 @@ public class WordAnagramsGroup {
     }
 
     public String report(WordCPA word) {
-        return this.groups.get(word.hashCode())
-                .stream()
-                .map(WordCPA::toString)
-                .sorted()
-                .reduce((s, s2) -> s + " " + s2)
-                .orElse("");
+        return this.dump(this.groups.get(word.hashCode()));
     }
 
     public void loadFromFile(String filename) throws IOException {
@@ -60,12 +55,15 @@ public class WordAnagramsGroup {
         this.groups.values()
                 .stream()
                 .filter(wordCPAS -> wordCPAS.size() > 1)
-                .map(wordCPAS -> wordCPAS.stream()
-                        .map(WordCPA::toString)
-                        .sorted()
-                        .reduce((s, s2) -> s + " " + s2)
-                        .orElse("")
-                )
+                .map(wordCPAS -> this.dump(wordCPAS))
                 .forEach(System.out::println);
+    }
+
+    private String dump(List<WordCPA> list) {
+        return list.stream()
+                .map(WordCPA::toString)
+                .sorted()
+                .reduce((s, s2) -> s + " " + s2)
+                .orElse("");
     }
 }
