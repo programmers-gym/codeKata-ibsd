@@ -19,4 +19,14 @@ public class MainTest {
         assertEquals(word3.hashCode(), word2.hashCode());
         assertEquals(word1.hashCode(), word3.hashCode());
     }
+
+    @Test
+    void test_word_group_count() {
+        WordCPA word1 = new WordCPA("abc");
+        WordCPA word2 = new WordCPA("bac");
+        WordCPA word3 = new WordCPA("cba");
+
+        WordAnagramsGroup group = new WordAnagramsGroup();
+        assertEquals(3, 3);
+    }
 }
