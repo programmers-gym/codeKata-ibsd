@@ -1,7 +1,7 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 public class WordAnagramsGroup {
     Map<Integer, List<WordCPA>> groups;
@@ -36,5 +36,15 @@ public class WordAnagramsGroup {
                 .sorted()
                 .reduce((s, s2) -> s + " " + s2)
                 .orElse("");
+    }
+
+    public void loadFromFile(String filename) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+            Arrays.stream(line.split(" "))
+                    .map(WordCPA::new)
+                    .forEach(this::add);
+        }
     }
 }
