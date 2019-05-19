@@ -50,7 +50,7 @@ public class WordAnagramsGroup {
         this.groups.values()
                 .stream()
                 .filter(wordCPAS -> wordCPAS.size() > 1)
-                .map(wordCPAS -> this.dump(wordCPAS))
+                .map(this::dump)
                 .forEach(outer);
     }
 
