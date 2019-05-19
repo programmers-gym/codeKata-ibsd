@@ -11,7 +11,13 @@ public class FizzBuzz {
         String result2 = buzzRuleResult();
         if (!result2.isEmpty()) return result2;
 
+        String[] atomicResults = new String[]{result1, result2};
+        String componentResult = componentRuleResult(atomicResults);
         return String.valueOf(this.value);
+    }
+
+    private String componentRuleResult(String[] atomicResults) {
+        return "";
     }
 
     private String fizzRuleResult() {
