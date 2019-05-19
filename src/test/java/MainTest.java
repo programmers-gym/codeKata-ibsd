@@ -27,6 +27,9 @@ public class MainTest {
         WordCPA word3 = new WordCPA("cba");
 
         WordAnagramsGroup group = new WordAnagramsGroup();
+        group.add(word1);
+        group.add(word2);
+        group.add(word3);
         assertEquals(3, group.count());
     }
 }
