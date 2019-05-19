@@ -5,11 +5,15 @@ public class FizzBuzz {
 
     @Override
     public String toString() {
-        String result1 = fizzRuleResult();
-        String result2 = buzzRuleResult();
-        String[] atomicResults = new String[]{result1, result2};
+        String[] atomicResults = getAtomicResults();
 
         return componentRuleResult(atomicResults);
+    }
+
+    private String[] getAtomicResults() {
+        String result1 = fizzRuleResult();
+        String result2 = buzzRuleResult();
+        return new String[]{result1, result2};
     }
 
     private String componentRuleResult(String[] atomicResults) {
