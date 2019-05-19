@@ -23,18 +23,6 @@ public class FizzBuzz {
                 .orElse(String.valueOf(this.value));
     }
 
-    private String fizzRuleResult() {
-        return (isDividedBy(3)) ? "Fizz" : "";
-    }
-
-    private String buzzRuleResult() {
-        return (isDividedBy(5)) ? "Buzz" : "";
-    }
-
-    private boolean isDividedBy(int i) {
-        return this.value % i == 0;
-    }
-
     public FizzBuzz(int i) {
         this.value = i;
     }
