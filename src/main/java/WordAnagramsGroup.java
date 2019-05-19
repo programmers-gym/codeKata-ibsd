@@ -18,15 +18,9 @@ public class WordAnagramsGroup {
 
     public void add(WordCPA word) {
         int key = word.hashCode();
-        if (this.groups.containsKey(key)) {
-            List<WordCPA> list = this.groups.get(key);
-            list.add(word);
-            this.groups.put(key, list);
-        } else {
-            List<WordCPA> list = new ArrayList<>();
-            list.add(word);
-            this.groups.putIfAbsent(key, list);
-        }
+        List<WordCPA> list = this.groups.containsKey(key) ? this.groups.get(key) : new ArrayList<>();
+        list.add(word);
+        this.groups.put(key, list);
     }
 
     public String report(WordCPA word) {
