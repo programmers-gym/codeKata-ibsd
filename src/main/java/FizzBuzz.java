@@ -1,30 +1,18 @@
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FizzBuzz {
     private final int value;
 
-    @Override
-    public String toString() {
-        return componentRuleResult(getAtomicResults());
+    public FizzBuzz(int i) {
+        this.value = i;
     }
 
-    private List<String> getAtomicResults() {
-        List<RuleEntry> ruleSet = RuleSet.all();
+    public String apply(List<RuleEntry> ruleSet) {
         return ruleSet.stream()
                 .map(ruleEntry -> ruleEntry.apply(this.value))
-                .collect(Collectors.toList());
-    }
-
-    private String componentRuleResult(List<String> atomicResults) {
-        return atomicResults.stream()
                 .filter(s -> !s.isEmpty())
                 .distinct()
                 .reduce(String::concat)
                 .orElse(String.valueOf(this.value));
-    }
-
-    public FizzBuzz(int i) {
-        this.value = i;
     }
 }

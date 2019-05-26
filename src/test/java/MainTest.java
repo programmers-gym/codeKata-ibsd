@@ -16,6 +16,6 @@ public class MainTest {
     })
     void should_test_fizz_buzz(int input, String output) {
         FizzBuzz item = new FizzBuzz(input);
-        assertEquals(output, item.toString());
+        assertEquals(output, item.apply(RuleSet.all()));
     }
 }
