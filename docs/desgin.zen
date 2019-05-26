@@ -1,0 +1,23 @@
+@Starter(main)
+ruleSet = RuleSet.all() {
+  DivideRule.create(3, Fizz)
+  DivideRule.create(5, Buzz)
+  ContainsRule.create(3, Fizz)
+  ContainsRule.create(5, Buzz)
+}
+
+game = new Game(ruleSet)
+
+game:Game.play(count) {
+  for (i < count) {
+    item = new FizzBuzz(i)
+    result = item:FizzBuzz.apply(ruleSet)
+    println(result)
+  }
+}
+
+item:FizzBuzz.apply(ruleSet) {
+  atomicResult = ruleSet.apply(i)
+  componentResult = reduce(atomicResult)
+  result = getOrElse(componentResult, defaultResult)
+}
